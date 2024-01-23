@@ -1,0 +1,7 @@
+clients:
+  hosts:
+    node1:
+      ansible_host: ansible-node
+      ansible_connection: ssh
+      ansible_user: root
+      ansible_password: root
