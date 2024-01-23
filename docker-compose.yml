@@ -1,0 +1,22 @@
+version: "2"
+services:
+  ansible-controller:
+    build:
+      context: ./ansible-controller
+      dockerfile: Dockerfile
+    image: ansible-controller
+    stdin_open: true
+    tty: true
+    container_name: ansible-controller-container
+    user: root
+    volumes:
+      - ./src:/src
+      - ~/netrcfile:/root/netrcfile
+    ports:
+      - 3000:80
+  ansible-node:
+    build:
+      context: ./ansible-node
+      dockerfile: Dockerfile
+    image: ansible-node
+    container_name: ansible-node-container
